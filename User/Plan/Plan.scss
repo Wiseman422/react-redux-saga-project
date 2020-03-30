@@ -1,0 +1,26 @@
+.plan-selection {
+
+  &__invoice {
+    margin: 1rem 0 2rem;
+    color: $sbMidGray;
+    font-weight: 600;
+
+    &__item  {
+      font-size: 1.4rem;
+      margin-top: 0.8rem;
+    }
+
+    &__total  {
+      border-top: 2px solid $sbLightGray;
+      font-size: 1.6rem;
+      margin-top: 1rem;
+      padding: 1rem 0;
+    }
+  }
+
+  @media (min-width: $screen-sm) {
+    &__invoice {
+      margin: 2rem 0 4rem;
+    }
+  }
+}

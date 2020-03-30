@@ -1,0 +1,633 @@
+// Common mailbox styles
+.mailbox__unread-icon {
+  color: $peterRiver;
+  margin-right: 0.5rem;
+  font-size: 0.9em;
+
+  .list-item.active & {
+    color: white;
+  }
+}
+
+// Mailbox list view
+.mailbox-detail {
+  min-height: 100%; // for backwards compatibility
+  min-height: 100vh;
+  background-color: white;
+
+  // For displaying 'Back to Inbox', up/down arrows
+  &__header-options {
+    margin: 1.5rem 1rem;
+
+    a {
+      color: $peterRiver;
+
+      &.disabled {
+        color: $silver;
+      }
+    }
+
+    &__switch {
+      display: inline-block;
+      float: right;
+      margin-right: 1rem;
+      font-size: 1.7rem;
+      line-height: 1em;
+
+      a {
+        margin-left: 1.3rem;
+      }
+    }
+  }
+
+  // For displaying identity email, subject, timestamp
+  &__header {
+    background: white;
+    padding: 1.4rem;
+    border-top: 1px solid #ecf0f1;
+
+    // timestamp and country flag emoji
+    &__top-info {
+      position: relative;
+      font-family: $arial;
+
+      &__country {
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 2rem;
+      }
+
+      &__lock {
+        position: absolute;
+        top: -0.5rem;
+        right: 3rem;
+        font-size: 2.2rem;
+        color: $sbNavy;
+      }
+
+      &__timestamp {
+        font-size: 1.4rem;
+        color: $concrete;
+      }
+    }
+
+    // avatar, from_display_name, subject
+    &__main-info {
+      position: relative;
+      margin-top: 1.5rem;
+      min-height: 5rem;
+
+      &__avatar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 5rem;
+        width: 5rem;
+        border-radius: 50%;
+        //background-color: $sbLightGray;
+        //background-image: url('http://www.hillspet.com/HillsPetUS/v1/portal/en/us/cat-care/images/HP_PCC_md_0130_cat53.jpg');
+        background-position: center;
+        background-size: cover;
+      }
+
+      &__content {
+        margin-left: 5rem;
+        padding-left: 1rem;
+        color: $sbDarkestGray;
+
+        &__from {
+          font-size: 1.4rem;
+        }
+
+        &__subject {
+          margin-top: 0.2rem;
+          font-weight: 600;
+          font-size: 1.7rem;
+        }
+      }
+    }
+
+    // to, from email addresses + lock icon if pgp/smime
+    &__email-addresses {
+      margin-top: 1rem;
+      display: inline-block;
+      position: relative;
+
+      &__lock {
+        color: $sbMidGray;
+        font-size: 2rem;
+        position: absolute;
+        top: 1.1rem;
+        top: calc(50% - 1rem);
+      }
+
+      &__lock + &__content {
+        margin-left: 3rem;
+      }
+
+      &__content {
+        display: inline-block;
+        font-size: 1.4rem;
+        margin-left: 0.5rem;
+
+        &__item {
+          display: table;
+          margin-top: 0.5rem;
+          white-space: pre;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          height: 2rem;
+        }
+
+        &__key {
+          display: inline-block;
+          color: $asbestos;
+          min-width: 4.5rem;
+        }
+
+        &__value {
+          display: inline;
+          color: $sbDarkestGray;
+        }
+      }
+    }
+
+  }
+
+  // For displaying 'Show Images' option
+  &__option {
+    font-size: 1.2rem;
+    line-height: 2.5rem;
+    letter-spacing: .05rem;
+    display: block;
+    padding: 0.8rem 1.2rem;
+    color: $sbMidGray;
+    background-color: #F3F3F3;
+    border: 1px solid $sbLightGray;
+
+    &__link {
+      cursor: pointer;
+      text-transform: uppercase;
+
+      &:hover {
+        color: $sbNavy;
+      }
+    }
+
+    &__button {
+      display: inline-block;
+      background-color: $sbLightGray;
+      border: 1px solid $sbMidGray;
+      border-radius: 0.3rem;
+      padding: 0 1.5rem;
+      cursor: pointer;
+      color: $sbDarkestGray;
+      font-size: 1.2rem;
+      float: right;
+
+      &:hover {
+        color: $sbNavy;
+        border-color: $sbNavy;
+      }
+
+      &.disabled {
+        color: $silver;
+        cursor: default;
+      }
+    }
+
+    svg {
+      margin-right: 0.5rem;
+      font-size: 2rem;
+    }
+  }
+
+  // Email body
+  // https://css-tricks.com/snippets/css/prevent-long-urls-from-breaking-out-of-container/
+  &__body {
+    background: white;
+    margin: 1.4rem 1.4rem;
+    position: relative;
+
+
+    &__loading {
+      text-align: center;
+      padding-top: 10rem;
+      color: $sbMidGray;
+      font-family: Raleway, sans-serif;
+
+      svg {
+        margin-right: 1rem;
+      }
+    }
+
+    &__iframe {
+      margin-top: 2rem;
+      width: 100%;
+
+      a {
+        cursor: pointer;
+        text-decoration: underline;
+      }
+
+      // Limit image width to 100%
+      img {
+        max-width: 100%;
+      }
+    }
+
+    &__plain {
+      width: 100%;
+      white-space: pre-wrap;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+
+      -ms-word-break: break-all;
+      ///* This is the dangerous one in WebKit, as it breaks things wherever */
+      word-break: break-all;
+      ///* Instead use this non-standard one: */
+      word-break: break-word;
+
+      ///* Adds a hyphen where the word breaks, if supported (No Blink) */
+      hyphens: auto;
+
+      font-family: $arial;
+      line-height: 2.4rem;
+      background-color: transparent;
+      border: none;
+    }
+  }
+
+  &__attachments {
+    background: white;
+    margin: 0.5rem 1rem;
+
+    &__header {
+      font-weight: 600;
+      color: $asbestos;
+      padding: 0 1rem;
+
+      &--link {
+        color: $peterRiver;
+      }
+    }
+
+    &__item {
+      text-align: center;
+      width: 9rem;
+      display: inline-block;
+      margin: 0 0.5rem;
+      vertical-align: top;
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+
+      &:first-of-type {
+        margin-left: 0;
+      }
+
+      &__icon {
+        color: $asbestos;
+        display: inline-block;
+        font-size: 4rem;
+      }
+
+      &__title {
+        display: block;
+        font-weight: 600;
+        color: $midnightBlue;
+        font-size: 1.2rem;
+        margin-top: 0.5rem;
+
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+
+        -ms-word-break: break-all;
+        ///* This is the dangerous one in WebKit, as it breaks things wherever */
+        word-break: break-all;
+        ///* Instead use this non-standard one: */
+        word-break: break-word;
+
+        ///* Adds a hyphen where the word breaks, if supported (No Blink) */
+        hyphens: auto;
+      }
+
+      &__action {
+        display: inline-block;
+        margin: 0 0.6rem;
+        font-weight: 700;
+        color: $sbNavy;
+        font-size: 1.3rem;
+        letter-spacing: 0.05rem;
+        cursor: pointer;
+      }
+
+      &__content {
+        margin-top: 1rem;
+        text-align: center;
+
+        img {
+          max-width: 100%;
+        }
+
+        &--text {
+          padding: 0 1rem;
+          text-align: left;
+        }
+      }
+    }
+  }
+
+  &__analytics__hops {
+    padding-left: 0;
+    list-style: none;
+    padding-top: 3rem;
+
+    &__item {
+      margin: 1.8rem 0;
+
+      &__icon {
+        display: inline-block;
+        margin-right: 1rem;
+        margin-top: -2rem;
+        color: $asbestos;
+      }
+
+      &__content {
+        display: inline-block;
+      }
+
+      &__title {
+        color: $midnightBlue;
+        font-weight: 600;
+      }
+
+      &__timestamp {
+        color: $asbestos;
+        font-size: 1.3rem;
+      }
+
+      &:first-of-type {
+        margin-top: 0;
+      }
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  @media (max-width: $screen-md-max) {
+    &__analytics__hops {
+      padding: 3rem;
+    }
+  }
+
+  @media (min-width: $screen-md) {
+    &__header {
+      position: relative;
+
+      &__main-info {
+        margin-top: 0.3rem;
+
+        // Avoid overlapping with country emoji on desktop view
+        &__content__subject {
+          margin-right: 3rem;
+        }
+      }
+
+      &__top-info {
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+
+        &__country {
+          position: static;
+          float: right;
+          height: 2.4rem !important;
+          margin-top: 0.5rem;
+        }
+        &__lock{
+          top: 1.9rem;
+          z-index: $zIndex1;
+        }
+      }
+    }
+
+    &__option {
+      margin: 0.2rem 1.2rem;
+    }
+  }
+
+  &__analytics {
+    @include container;
+    max-width: 100%;
+    &__div{
+      @include span(12 of 12);
+    }
+  }
+
+  @media (min-width: $screen-md-max) {
+    &__analytics {
+      &__div{
+        @include span(6 of 12);
+
+        &__last{
+          @include span(6 of 12 last);
+        }
+        &__embedded{
+          @include span(12 of 12);
+        }
+      }
+    }
+    &__analytics__embedded {
+      .mailbox-detail__analytics__div__last {
+        padding: 0rem 3rem;
+      }
+    }
+  }
+}
+
+// Mailbox compose view
+.mailbox-compose {
+  &__upper-body {
+    margin: 1rem 1rem 0.5rem;
+  }
+
+  &__identity-select-option {
+    &__name {
+      font-size: 1.3rem;
+      color: $silver;
+    }
+
+    &__email {
+      color: $wetAsphalt;
+    }
+  }
+
+  &__dropzone {
+    margin: 1rem 0;
+    color: $sbDarkestGray;
+    font-weight: 400;
+    letter-spacing: 0.04rem;
+    font-size: 1.4rem;
+    cursor: pointer;
+  }
+
+  &__dropzone-icon {
+    vertical-align: middle;
+    display: inline-block;
+    margin: 0.6rem 0;
+    height: 2.2rem;
+    width: 2.2rem;
+    color: $sbDarkestGray;
+    fill: $sbDarkestGray;
+  }
+
+  &__dropzone-txt {
+    vertical-align: middle;
+    display: inline-block;
+    margin-left: 0.8rem;
+  }
+
+  &__attachment {
+    margin: 0.4rem 0 0.4rem 1rem;
+    display: inline-block;
+    border: 1px solid $sbLightGray;
+    padding: 0.2rem 0.75rem 0.2rem 0.6rem;
+    border-radius: 1.5rem;
+
+    &__delete {
+      color: $sbMidGray;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    &__filename {
+      margin-left: 0.5rem;
+      line-height: 1.7em;
+      color: $sbDarkestGray;
+      font-size: 1.1rem;
+    }
+  }
+
+  &__wysiwyg {
+    margin: 0;
+    box-sizing: border-box !important;
+
+    &__container {
+      margin-top: 1rem;
+    }
+
+    &__toggle {
+      background-color: white;
+      border-top: 1px solid #f1f1f1;
+      border-bottom: 1px solid #f1f1f1;
+      text-align: center;
+      height: 1.5rem;
+      cursor: pointer;
+
+      svg {
+        color: $sbMidGray;
+        position: relative;
+        top: -0.3rem;
+      }
+
+      &:hover {
+        background-color: #f1f1f1;
+      }
+
+      & + .mailbox-compose__wysiwyg .mailbox-compose__wysiwyg__toolbar {
+        border-top: none;
+      }
+    }
+
+    &__loading {
+      margin-top: 4rem;
+      text-align: center;
+      font-weight: 600;
+      color: $asbestos;
+      letter-spacing: 0.05rem;
+    }
+
+    &__toolbar {
+      border-left: none !important;
+      border-right: none !important;
+      margin-bottom: 0 !important;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &__editor {
+      background: white;
+      padding: 0 1.5rem;
+      box-sizing: border-box !important;
+    }
+  }
+
+  .full-page-view__toolbar {
+    display: none;
+  }
+
+  &__encrypt-with {
+    display: inline-block;
+    margin-top: 1rem;
+    margin-right: 3rem;
+
+    &__text {
+      font-weight: 600;
+    }
+    &__text-gray {
+      color: $sbMidGray;
+    }
+
+    input {
+      margin-left: 1.3rem;
+    }
+
+    label {
+      margin-left: 0.7rem;
+
+      &[disabled] {
+        color: $sbMidGray;
+      }
+    }
+  }
+
+  @media (min-width: $screen-sm) {
+    &__encrypt-with {
+      margin-right: 0;
+    }
+
+    &__encrypt-with--right {
+      float: right;
+    }
+  }
+
+  @media (min-width: $screen-md) {
+    &__upper-body {
+      margin-left: 10rem;
+      margin-right: 10rem;
+    }
+
+    &__wysiwyg {
+      margin: 0;
+    }
+
+    &__wysiwyg__toolbar {
+      padding-left: 6rem !important;
+      padding-right: 6rem !important;
+    }
+
+    &__wysiwyg__editor {
+      padding-left: 7rem;
+      padding-right: 7rem;
+    }
+
+    .full-page-view__toolbar {
+      display: block;
+    }
+  }
+}

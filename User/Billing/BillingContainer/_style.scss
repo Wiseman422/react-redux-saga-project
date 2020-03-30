@@ -1,0 +1,123 @@
+/**
+ * This is almost exact copy of the src/Components/ResponsiveContainer
+ * The only difference is that this container supports two column
+ * layout as opposed to ResponsiveContainer
+ */
+
+$sidebarWidth: 24rem;
+$sidebarGutterWidth: 2rem;
+$sidebarGutterCaretSize: 0.7rem;
+$sidebarTransitionDuration: 0.2s;
+
+$listWidth: 0rem;
+
+.billing-container {
+  padding-bottom: 47px;
+  height: 100%;
+
+  &__sidebar {
+    display: none;
+    background-color: #fbfbfb;
+  }
+
+  &__content-pane {
+      min-height: 100%;
+      background-color: #fff;
+  }
+
+  @media (min-width: $screen-sm) {
+    padding-bottom: 0;
+
+    &__sidebar {
+      display: block;
+      margin-top: $navbarHeight;
+      position: fixed;
+      width: $sidebarWidth + $sidebarGutterWidth;
+      padding-right: $sidebarGutterWidth;
+      top: 0;
+      left: -$sidebarWidth;
+      transition: left 0.5s ease;
+      height: 100%;
+
+      &__inner{
+        max-height: 100%;
+        height: 100%;
+        overflow-y: auto;
+      }
+
+      &__toggle-area {
+        top: 0;
+        right: 0;
+        position: absolute;
+        width: 2rem;
+        height: 100%;
+        cursor: pointer;
+        transition: background-color $sidebarTransitionDuration ease;
+
+        &__caret {
+          content: '';
+          width: 0;
+          height: 0;
+          border-top: $sidebarGutterCaretSize solid transparent;
+          border-bottom: $sidebarGutterCaretSize solid transparent;
+          border-left: $sidebarGutterCaretSize solid $sbNavy;
+          top: 5.5rem;
+          right: 0.6rem;
+          position: absolute;
+          transition: all 0.5s ease;
+        }
+
+        &:hover {
+          background-color: darken($bodyBg, 4%);
+          transition: background-color $sidebarTransitionDuration ease;
+        }
+      }
+    }
+
+    .core-layout__content--with-topbar &__sidebar {
+      margin-top: $navbarHeight + $topbarHeight;
+    }
+
+    &--sidebar-visible {
+      .billing-container__sidebar {
+        left: 0;
+        transition: left 0.5s ease;
+      }
+
+      .billing-container__sidebar__toggle-area__caret {
+        border-left: none;
+        border-right: 0.7rem solid $sbNavy;
+        transition: all 0.5s ease;
+      }
+    }
+  }
+
+  @media (min-width: $screen-sm) {
+
+    .core-layout__content--with-topbar &__list-pane {
+      padding-top: $navbarHeight + $topbarHeight;
+    }
+
+    &__content-pane {
+      display: block;
+      //padding-bottom: 41px; // because of footer
+      margin-left: $sidebarGutterWidth + $listWidth;
+      transition: margin-left 0.5s ease;
+    }
+
+    &__no-selection-message {
+      padding-top: 200px;
+      text-align: center;
+      font-size: 1.8rem;
+      letter-spacing: 0.08rem;
+      color: #BABABA;
+    }
+
+    &--sidebar-visible {
+      .billing-container__content-pane {
+        margin-left: $sidebarWidth + $sidebarGutterWidth + $listWidth;
+        transition: margin-left 0.5s ease;
+      }
+    }
+  }
+}

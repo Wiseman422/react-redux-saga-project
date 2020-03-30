@@ -1,0 +1,224 @@
+/**
+ * Messaging Room List
+ */
+.msging__room-list {
+  position: absolute;
+  top: $toolbar-height;
+  bottom: 0;
+  left: -100%;
+  width: 100%;
+  background-color: $sbNavy;
+  color: #efefef;
+  transition: left 300ms ease;
+  overflow-y: auto;
+  z-index: $z-index-room-list;
+
+  &__open {
+    left: 0%;
+  }
+
+  @media (min-width: $breakpoint-sm) {
+    top: 0;
+    left: 0;
+    width: $room-list-width;
+  }
+
+  &__ul {
+    list-style: none;
+    padding: 0rem 0rem 2rem;
+    margin: 0;
+    @include container;
+    max-width: 100%;
+  }
+  &__li {
+    @include span(12 of 12);
+    position: relative;
+    padding: 0.5rem $padding;
+    font-size: $padding;
+    background-color: $sbNavy;
+    cursor: pointer;
+
+    &__txt {
+      white-space: pre;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      padding-right: 4rem;
+      &--bold {
+        font-weight: 600;
+      }
+    }
+
+    &__encryption {
+      svg {
+        display: inline-block;
+        margin-top: -0.2rem;
+      }
+
+      &__e2ee {
+        font-size: 1.15rem; 
+        svg {
+          margin-top: -0.5rem;
+        }
+      }
+
+      &__msgsafe {
+        font-size: 1.25rem;
+      }
+    }
+
+    &__status {
+      font-size: 1.15rem;
+      margin-right: 0.75rem;
+      svg {
+        display: inline-block;
+        margin-top: -0.2rem;
+      }
+
+      &__online {
+        color: $success;
+      }
+
+      &__offline {
+        color: $sbNavy + #222;
+      }
+    }
+
+    &__close {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 1.5rem;
+      line-height: 1.5rem;
+      font-size: 1.75rem;
+      display: none;
+      color: $sbNavy;
+
+      &:hover {
+        color: $sbWhite;
+      }
+    }
+
+    &__unread {
+      position: absolute;
+      display: inline-block;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 1.3rem;
+      font-size: 1.25rem;
+      color: #fff;
+      background-color: $sbRed + #151515;
+      border-radius: 50%;
+      padding: 0rem 0.7rem;
+      height: 2rem;
+      text-align: center;
+      line-height: 2rem;
+    }
+
+    &:hover {
+      background-color: $sbNavy - #111;
+      .msging__room-list__li__close {
+        display: block;
+      }
+    }
+    &__active, &__active:hover {
+      background-color: $sbNavy - #222;
+    }
+  }
+}
+
+.msging__room-list__in-progress {
+  padding: 2rem 1rem;
+  text-align: center;
+  font-size: 1.5rem;
+  color: $sbLightGray;
+}
+
+.msging__room-list__header {
+  @include span(12 of 12);
+  position: relative;
+  text-transform: uppercase;
+  padding: 0.5rem 1.5rem 0.5rem 1rem;
+  
+  font-size: 1.25rem;
+
+  &__encrypted {
+    margin-top: 1rem;
+  }
+
+  &__ephemeral {
+    margin-top: 3rem;
+  }
+
+  &__txt {
+    padding-right: 3rem;
+  }
+
+  &__add {
+    position: absolute;
+    top: 0;
+    right: 1.5rem;
+    height: 2rem;
+    line-height: 2rem;
+    font-size: 1.75rem;
+    width: 3rem;
+    text-align: right;
+    color: #e0e0e0;
+    &:hover {
+      cursor: pointer;
+      color: #fff;
+    }
+    svg {
+      display: inline-block;
+      margin-top: 0.3rem;
+    }
+  }
+}
+
+/**
+ * Create Room Modal styles
+ */
+.msging__create-room {
+  &__overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: $zIndex4;
+    background-color: rgba(255, 255, 255, 0.0);
+    transition: background-color 180ms ease-out;
+    &__show {
+      background-color: rgba(255, 255, 255, 0.8);
+    }
+  }
+
+  &__modal {
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    width: 90%;
+    max-width: 500px;
+    transform: translate(-50%, -50%);
+    padding: 1.5rem;
+    border: 1px solid $sbLightGray;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+    transition: top 180ms ease-out;
+
+    &__show {
+      top: 50%;
+    }
+  }
+
+  &__txt {
+    @include span(12 of 12);
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+  }
+
+  &__submit {
+    float: right;
+    margin-top: 0.75rem;
+  }
+}

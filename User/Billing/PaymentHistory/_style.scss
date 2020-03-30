@@ -1,0 +1,14 @@
+.list-item{
+  &__payment-status{
+    color: $sbGreen;
+    margin-top: -3px;
+    font-size: 1.5rem;
+  }
+  &__analytics-data__alert{
+    color: $sbRed;
+  }
+}
+
+.list-item__title-alert{
+  color: #333;
+}

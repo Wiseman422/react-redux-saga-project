@@ -1,0 +1,165 @@
+.homepage__ios__app_container {
+  position: relative;
+  background: transparent;
+  padding-top: 7rem;
+}
+.homepage__ios__app{
+  max-width: 34.5rem;
+  margin: 0 auto;
+  height: 56.1rem;
+  background-color: $darkGreen;
+
+  .ribbon-container {
+    position: relative;
+    cursor: default;
+  }
+
+  .corner-ribbon {
+    width: 200px;
+    position: absolute;
+    top: 14px;
+    left: -75px;
+    text-align: center;
+    line-height: 25px;
+    color: #f0f0f0;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    background: rgba(240,75,76,.8);
+    font-size: 10px;
+    letter-spacing: 0.3px;
+  }
+
+  .homepage__ios__app__link {
+    display: inline-block;
+    overflow: hidden;
+    height: 64px;
+    width: 220px;
+  }
+
+  &__title{
+    font-family: Raleway,sans-serif;
+    font-size: 36px;
+    font-weight: 500;
+    text-align: center;
+    color: #ffffff;
+  }
+
+  .homepage__ios__app__left {
+    text-align: center;
+    img {
+      max-width: 100%;
+    }
+
+    img.multi__platform__ios__image.display-mobile-only {
+      padding-left: 2rem;
+    }
+  }
+
+  .homepage__ios__app__right {
+    max-width: 285px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  &__description{
+    opacity: 0.5;
+    font-family: Raleway,sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.44;
+    text-align: center;
+    color: #ffffff;
+    margin-top: 2rem;
+  }
+
+  &__link{
+    img{
+      width: 22rem;
+      height: 6.4rem;
+    }
+
+    &:hover img{
+      border-radius: 4px;
+      //border: 1px solid #08121f;
+    }
+  }
+
+  &__links__container{
+    position: relative;
+    width: 100%;
+    display: inline-block;
+    margin-top: 2rem;
+
+    .homepage__ios__app__link:first-child {
+      margin-bottom: 1.5rem;
+    }
+
+  }
+}
+
+
+@media (min-width: $screen-sm) {
+  .homepage__ios__app_container{
+    padding-top: 16rem;
+  }
+
+}
+
+@media (min-width: $screen-md) {
+
+  .homepage__ios__app {
+    max-width: 114rem;
+    height: 30.8rem;
+    overflow: hidden;
+
+    &__left {
+      @include gallery(3 of 6);
+    }
+    &__right {
+      @include gallery(3 of 6);
+      padding: 4rem 2rem 3rem 0;
+    }
+
+    &__title {
+      text-align: left;
+    }
+
+    &__description {
+      text-align: left;
+      margin-top: 3rem;
+    }
+
+    &__link {
+      img {
+        width: 22rem;
+        height: 6.4rem;
+      }
+
+      &:hover img {
+        border-radius: 4px;
+        //border: 1px solid #08121f;
+      }
+    }
+
+    &__links__container {
+      margin-top: 4rem;
+      text-align: left;
+
+      .homepage__ios__app__link:first-child {
+        margin-right: 1.85rem;
+        margin-bottom: 0;
+      }
+
+    }
+
+    .homepage__ios__app__right {
+      max-width: none;
+      text-align: left;
+    }
+
+    .multi__platform__ios__image {
+      margin-top: -1px;
+      margin-left: 3rem;
+    }
+  }
+}

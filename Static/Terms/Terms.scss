@@ -1,0 +1,19 @@
+
+.terms {
+
+  &__keys {
+    padding: 1rem;
+    background-color: $sbLightGray + #111;
+    line-height: 2rem;
+
+    &__fingerprint {
+      font-family: monospace;
+      font-size: 1rem;
+    }
+
+    a {
+      color: $sbNavy;
+      text-decoration: underline;
+    }
+  }
+}

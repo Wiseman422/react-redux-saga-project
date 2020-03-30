@@ -1,0 +1,14 @@
+.planpage {
+  .grey-left-gradient-bg-top {
+    display: none;
+  }
+
+  @media (max-width: $screen-xs-max) {
+    .plans{
+      padding-top: 25rem;
+    }
+    .plans__header{
+      top: 10rem
+    }
+  }
+}

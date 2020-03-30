@@ -1,0 +1,76 @@
+$app-footer-height: 4.7rem;
+$room-list-width: 25rem;
+$padding: 1.5rem;
+$compose-height: 4rem;
+$compose-submit-width: 4rem;
+$compose-vertical-padding: 1rem;
+$toolbar-height: 4rem;
+$room-hint-height: 2rem;
+$room-header-height: 7rem;
+$switchTabs-height: 4rem;
+$room-detail-width: 32rem;
+$room-detail-width-lg: 40rem;
+
+$z-index-room-detail: 700;
+$z-index-compose: 600;
+$z-index-toolbar: 500;
+$z-index-room-list: 400;
+$z-index-room: 200;
+$z-index-room-hint: 100;
+
+$breakpoint-sm: 768px;
+$breakpoint-md: 992px;
+$breakpoint-lg: 1200px;
+
+/**
+ * Messaging Container
+ */
+.msging {
+  &__container {
+    position: absolute;
+    top: $navbarHeight;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+
+    @media (min-width: $breakpoint-md) {
+      bottom: $app-footer-height;
+    }
+  }
+}
+
+/**
+ * Messaging Room List
+ */
+@import "RoomList/RoomList";
+
+/**
+ * Messaging Toolbar
+ */
+@import "Toolbar/Toolbar";
+
+/**
+ * Messaging Room
+ */
+@import "Room/Room";
+
+/**
+ * Messages
+ */
+@import "Room/components/Messages";
+
+/**
+ * Room Header
+ */
+@import "RoomHeader/RoomHeader";
+
+/**
+ * Room Detail
+ */
+@import "RoomDetail/RoomDetail";
+
+/**
+ * Message Compose
+ */
+@import "Compose/Compose";

@@ -1,0 +1,74 @@
+.forwardaddress-container {
+  padding-bottom: 2em;
+}
+.request-smime-container {
+  padding-bottom: 2em;
+}
+
+.forwardaddress {
+  text-align: center;
+
+  .iconunconfirmed {
+    color: #ffffff;
+    @include icon-gradient($alizarin, $pomegranate);
+  }
+
+  .unconfirmedtext {
+    padding: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+}
+
+.text-and-icon-left {
+ color: $sbMidGray;
+ @include span(2 of 10);
+}
+
+.text-and-icon-right {
+ @include span(8 of 10 last);
+}
+
+.three-left-col {
+ @include span(1 of 3);
+}
+.three-middle-col {
+ @include span(1 of 3);
+}
+.three-right-col {
+ @include span(1 of 3 last);
+}
+
+.sep-top {
+ padding-top: 1.8rem;
+}
+
+.sep-top-md {
+ padding-top: 0.8rem;
+}
+
+.sep-top-sm {
+ padding-top: 0.4rem;
+}
+
+.sep-bottom-lg {
+ padding-bottom: 1.8rem;
+}
+
+.actionLink {
+ text-decoration: underline;
+ color: $sbDarkestGray;
+ cursor: pointer;
+ font-weight: bold;
+}
+
+.red-icon {
+ color: $sbRed;
+}
+.underline {
+ text-decoration: underline;
+}
+
+.gray-text {
+ color: $sbMidGray;
+}

@@ -1,0 +1,85 @@
+/**
+ * Messaging Toolbar
+ */
+.msging__toolbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: $toolbar-height;
+  line-height: $toolbar-height;
+  padding: 0rem 1.5rem;
+  background-color: $sbNavy;
+  color: #fff;
+  z-index: $z-index-toolbar;
+  transition: width 300ms ease;
+
+  @media (min-width: $breakpoint-sm) {
+    display: none;
+  }
+
+  &__right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    text-align: right;
+    width: 16rem;
+  }
+
+  &__left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    right: 16rem;
+    text-align: left;
+
+  }
+
+  &__title {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 4rem;
+    white-space: pre;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    @media (min-width: $breakpoint-sm) {
+      display: none;
+    }
+  }
+
+  &__action {
+    display: inline-block;
+    padding: 0 1rem;
+    font-size: 2rem;
+    &:hover {
+      cursor: pointer;
+      background-color: $sbNavy - #111;
+    }
+  }
+
+  &__tool {
+    text-align: center;
+    font-size: 1.75rem;
+    svg {
+      cursor: pointer;
+    }
+    &__add {
+      @include span(12 of 12);
+    }
+    &__close, &__open {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 4rem;
+      margin: 0rem;
+      @media (min-width: $breakpoint-sm) {
+        display: none;
+      }
+    }
+  }
+}

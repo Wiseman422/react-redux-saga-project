@@ -1,0 +1,449 @@
+.blue-gradient-bg.benefits__page{
+  background-size:100% 539px;
+  margin-top: -$navbarBigHeight;
+  padding-top: $navbarBigHeight;
+  padding-bottom: 24.3rem;
+
+  .blue-gradient-bg-bottom{
+    top: 459px;
+  }
+}
+
+.benefits {
+  position: relative;
+  @include container;
+  max-width: 86rem;
+  padding: 1.5rem 1.5rem 4.8rem 1.5rem;
+
+  &__header {
+    width: 100%;
+    position: relative;
+    text-align: center;
+    color: #eef2f6;
+
+    &-title-container{
+      text-align: center;
+      margin: 0 auto;
+      font-family: Raleway;
+      color: #ffffff;
+      p {
+        padding: 0;
+      }
+    }
+
+    &__title {
+      font-size: 3.6rem;
+      font-weight: 500;
+      line-height: 4.2rem;
+      margin-top: 4rem;
+    }
+
+    &__sub_title {
+      height: 5.2rem;
+      font-size: 1.8rem;
+      font-weight: bold;
+      line-height: 1.44;
+      max-width: 26rem;
+      margin: 0 auto;
+      margin-top: 4rem;
+    }
+
+    &__description {
+      opacity: 0.5;
+      font-size: 1.8rem;
+      font-weight: 500;
+      line-height: 1.44;
+      max-width: 311px;
+      margin: 0 auto;
+      margin-top: 1.7rem;
+    }
+
+    &__image-container{
+      text-align: center;
+      .benefits__header__mac-image{
+        width: 345px;
+        max-width: 100%;
+        height: auto;
+      }
+    }
+
+    &__image{
+      margin-top: 4rem;
+      display: block;
+      position: relative;
+    }
+  }
+
+  &__top {
+    position: absolute;
+    height: 0px;
+    top: -10rem;
+    right: 0;
+    left: 0;
+  }
+
+  &__section {
+    @include span(12 of 12);
+
+    li {
+      margin: 1rem 0;
+    }
+
+    a{
+      color: #000;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+
+  &__title {
+    margin-top: 4rem;
+    //text-transform: uppercase;
+    //font-size: 1.6rem;
+    //color: $sbNavy;
+
+    text-transform: capitalize;
+    color: $sbDarkestBlue;
+    line-height: 21px;
+    font-family: Raleway;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: left;
+
+    &:first-of-type {
+      margin-top: 1rem;
+      margin-bottom: 2.5rem;
+    }
+  }
+
+
+  p {
+    margin: 1.5rem 0;
+    font-family: OpenSans;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    text-align: left;
+    color: #333333;
+    font-weight: 400;
+  }
+
+  ul li {
+    // margin: 1rem 0;
+    color: black;
+  }
+
+  &__image {
+    max-width: 35%;
+    margin: 0 1.5rem 0 0;
+    display: block;
+    float: left;
+  }
+
+  &__tls-keys {
+    padding: 1rem;
+    background-color: $sbLightGray + #111;
+    line-height: 2rem;
+  }
+
+  &__tls-key {
+    font-family: monospace;
+    font-size: 1.25rem;
+  }
+
+  &__marketing_app_link.blue-gradient-bg {
+    padding-bottom: 6rem;
+    background-image: linear-gradient(160deg,#e9ecef,#fff);
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: 100% calc(100% - 10rem);
+
+    .grey-gradient-top {
+      top: 10rem;
+      width: 100%;
+      height: 228px;
+      left: 0;
+      position: absolute;
+      border-top: 228px solid white;
+      border-right: 100vw solid transparent;
+    }
+
+    .homepage__ios__app_container{
+      padding-top: 4rem;
+    }
+
+  }
+
+  &__emphasis_block {
+    position: relative;
+
+    .benefits__emphasis_content {
+      border-top: 4px solid #0083e8;
+      border-bottom: 4px solid #0083e8;
+      right: 0;
+      padding: 2rem .2rem;
+      p {
+        text-align: center;
+        margin: 0;
+        font-family: Raleway;
+        font-size: 1.8rem;
+        font-weight: 500;
+        line-height: 1.44;
+        color: $sbDarkestBlue;
+      }
+    }
+
+  }
+}
+
+/**
+ * Benefits TOC
+ */
+.benefits {
+  &__toc {
+    @include span(12 of 12);
+    margin: 2rem 0rem 8rem;
+    text-align: center;
+    &__title {
+      text-transform: uppercase;
+      color: $sbNavy;
+      margin: 1rem 0 0 0;
+      padding-left: 1.5rem;
+
+      font-family: Raleway;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+      text-align: center;
+    }
+
+    &__ul {
+      width: 236px;
+      border: none;
+      display: inline-block;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      margin-top: 2rem;
+      border-radius: 3px;
+      text-align: center;
+    }
+
+    &__li {
+      @include span(12 of 12);
+      &__a {
+        @include span(12 of 12);
+        color: $darkBlue;
+        cursor: pointer;
+        font-family: OpenSans;
+        font-size: 1.4rem;
+        font-weight: 600;
+        letter-spacing: -0.2px;
+        text-align: center;
+        padding: 1rem 1.5rem;
+
+        &__active {
+          border-radius: 3px;
+          background-color: #20305a;
+          color: #ffffff !important;
+        }
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+
+/**
+ * Benefits TOC Selector
+ */
+.benefits__toc__selector {
+  @include span(12 of 12);
+  text-align: center;
+  margin: 1rem 0rem;
+  select {
+    margin: auto;
+    width: 40rem;
+    max-width: 100%;
+  }
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+
+  .blue-gradient-bg.benefits__page {
+    background-size: 100% 652px;
+    padding-bottom: $footerHeight;
+
+    .blue-gradient-bg-bottom {
+      top: 424px;
+    }
+
+    .homepage__ios__app_container {
+      padding-top: 0;
+    }
+  }
+
+  .benefits {
+    max-width: 94.7rem;
+    padding: 5.2rem 3rem;
+
+    p {
+      margin: 2.5rem 0;
+    }
+
+    &__emphasis_block {
+      @include span(2 of 7);
+      position: relative;
+      min-height: 17.5rem;
+      margin-right: 3.8rem;
+
+      .benefits__emphasis_content {
+        border-top: 4px solid #0083e8;
+        border-bottom: 4px solid #0083e8;
+        width: 23.6rem;
+        position: absolute;
+        right: 0;
+        padding: 2rem 0.5rem;
+        p {
+          text-align: right;
+          margin: 0;
+
+          font-family: Raleway;
+          font-size: 1.8rem;
+          font-weight: 500;
+          line-height: 1.44;
+          color: $sbDarkestBlue;
+        }
+      }
+
+    }
+
+    &__header {
+      padding: 5.2rem 3rem 5.2rem 3rem;
+
+      &-title-container {
+        max-width: 750px;
+      }
+
+      &__title {
+        font-size: 3.6rem;
+        font-weight: 500;
+        line-height: 4.2rem;
+        margin-top: 2.3rem;
+
+        &:first-of-type {
+          margin-bottom: 0;
+        }
+      }
+
+      &__sub_title {
+        height: 2.1rem;
+        font-size: 1.8rem;
+        font-weight: bold;
+        margin-top: 4rem;
+        max-width: none;
+      }
+
+      &__description {
+        opacity: 0.5;
+        font-size: 1.8rem;
+        font-weight: 500;
+        line-height: 1.44;
+        max-width: 565px;
+        margin: 0 auto;
+        margin-top: 1.7rem;
+      }
+
+      &__image-container {
+        text-align: center;
+        .benefits__header__mac-image {
+          width: 947px;
+          max-width: 100%;
+          height: auto;
+        }
+      }
+
+      &__image {
+        margin-top: 4rem;
+        display: block;
+        position: relative;
+      }
+    }
+    &__title {
+      text-transform: capitalize;
+      color: $sbDarkestBlue;
+      line-height: 21px;
+      font-family: Raleway;
+      font-size: 1.8rem;
+      font-weight: bold;
+      text-align: left;
+    }
+
+    &__section {
+      @include span(12.5 of 18);
+      padding-bottom: 4rem;
+
+      li {
+        margin: 1rem 0;
+      }
+    }
+    &__toc {
+
+      &__title {
+        text-transform: uppercase;
+        color: $sbDarkestBlue;
+        line-height: 15px;
+        font-family: Raleway;
+        font-size: 1.3rem;
+        font-weight: 800;
+        letter-spacing: 0.8px;
+        text-align: left;
+      }
+
+      @include span(4.6 of 18 last);
+      margin-top: 0;
+      text-align: left;
+      &__ul {
+        @include span(12 of 12);
+        text-align: left;
+      }
+      ul li {
+        margin: 0.15rem 0;
+      }
+      &__li {
+        margin: 1rem 0;
+        @include span(12 of 12);
+        &__a {
+          @include span(12 of 12);
+          text-align: left;
+        }
+      }
+    }
+
+    &__marketing_app_link.blue-gradient-bg {
+      padding-bottom: 6rem;
+      background-image: linear-gradient(160deg,#e9ecef,#fff);
+      background-position: bottom;
+      background-repeat: no-repeat;
+      background-size: 100% calc(100% - 4.5rem);
+
+      .grey-gradient-top {
+        top: 4.5rem;
+      }
+
+    }
+  }
+}
+
+
+@media (min-width: $screen-md) {
+  .benefits {
+    //max-width: 94.7rem;
+    padding: 1.5rem 0 4rem 0;
+  }
+}

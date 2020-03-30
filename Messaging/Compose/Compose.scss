@@ -1,0 +1,119 @@
+/**
+ * Message Compose
+ */
+.msging__compose {
+  position: absolute;
+  right: 0rem;
+  bottom: 0rem;
+  left: 0rem;
+  height: $compose-height;
+  z-index: $z-index-compose;
+  transition: all 300ms ease;
+  border-top: 1px solid $sbLightGray;
+  background-color: #fff;
+
+  @media (min-width: $breakpoint-sm) {
+    left: $room-list-width;
+  }
+
+  @media (min-width: $breakpoint-md) {
+    &__room-detail-open {
+      right: $room-detail-width;
+    }
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    &__room-detail-open {
+      right: $room-detail-width-lg;
+    }
+  }
+
+  &__input {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 1.5rem;
+
+    &__with-file-upload {
+      left: 3.5rem;
+    }
+
+    &__sizer, &__textarea {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+
+      &__inner {
+        padding-top: $compose-vertical-padding;
+        padding-right: $compose-submit-width + $padding;
+        padding-bottom: $compose-vertical-padding;
+        padding-left: 0rem;
+        line-height: $compose-height - (2 * $compose-vertical-padding);
+        width: 100%;
+      }
+    }
+    &__sizer {
+      z-index: - $zIndex1;
+    }
+    &__textarea {
+      &__inner {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        border: none;
+        outline: 0;
+      }
+    }
+  }
+
+  &__submit {
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+    border: none;
+    bottom: 0;
+    right: 0;
+    height: $compose-height;
+    width: $compose-submit-width;
+    color: $sbWhite;
+    background-color: $sbGreen;
+    font-size: 1.75rem;
+    &__disabled, &__disabled:hover {
+      background-color: $sbMidGray;
+    }
+  }
+
+  &__attach {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 3.5rem;
+    color: $sbMidGray;
+    display: inline-block;
+    z-index: 1;
+    font-size: 2rem;
+    cursor: pointer;
+
+    &:hover {
+      color: $black;
+    }
+
+    &__disabled {
+      color: $sbMidGray;
+    }
+
+    .svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}

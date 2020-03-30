@@ -1,0 +1,64 @@
+.credit-card {
+  &__cc-brands {
+    margin-top: 1rem;
+    padding-left: 0;
+    list-style: none;
+
+    li {
+      display: inline-block;
+      margin-right: 0.9rem;
+
+      img {
+        width: 4rem;
+      }
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__powered-by-brand {
+    width: 11rem;
+    float: right;
+    margin-left: 1rem;
+  }
+
+  &__cvv {
+    @include span(4 of 10);
+  }
+
+  &__expiration {
+    @include span(6 of 10 last);
+  }
+
+  @media (min-width: 400px) {
+    &__powered-by-brand {
+      width: 12rem;
+    }
+  }
+
+  @media (min-width: $screen-sm) {
+    &__number {
+      @include span(5 of 10);
+    }
+
+    &__cvv {
+      @include span(2 of 10);
+    }
+
+    &__expiration {
+      @include span(3 of 10 last);
+    }
+
+    &__cc-brands {
+      display: inline-block;
+      float: right;
+      margin: 0 0 1rem;
+
+      li img {
+        width: 4.8rem;
+      }
+    }
+  }
+}
